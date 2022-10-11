@@ -1,0 +1,18 @@
+#page {
+  margin-top: 60px;
+
+  @include breakpoint(large) {
+    margin-top: rem(200px);
+  }
+}
+
+main {
+  .container {
+    @include clamp-calc($min-grid-width, $max-grid-width, $small-p-min, $small-p-max, padding-top);
+    @include clamp-calc($min-grid-width, $max-grid-width, $small-p-min, $small-p-max, padding-bottom);
+  }
+
+  .skyline {
+    width: 100%;
+  }
+}

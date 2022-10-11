@@ -1,0 +1,4 @@
+build
+node_modules
+.idea
+frontend/src/css/styles.css.map

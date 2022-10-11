@@ -1,0 +1,63 @@
+@use "sass:math";
+
+// Font Mixin
+@function rem($font-size) {
+  $remSize: math.div($font-size, 16px);
+  @return $remSize * 1rem;
+}
+
+@mixin font($font-size, $font-weight, $line-height, $main-font) {
+  font-size: rem($font-size);
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-family: $main-font;
+}
+
+// Breakpoints Mixin
+@mixin breakpoint($breakpoints) {
+
+  @if $breakpoints == default {
+    @media (max-width: $breakpoint-default) {
+      @content ;
+    }
+  }
+
+  @if $breakpoints == small {
+    @media (min-width: $breakpoint-small) {
+      @content;
+    }
+  } @else if $breakpoints == medium {
+    @media (min-width: $breakpoint-medium) {
+      @content;
+    }
+  } @else if $breakpoints == large {
+    @media (min-width: $breakpoint-large) {
+      @content;
+    }
+  } @else if $breakpoints == giant {
+    @media (min-width: $breakpoint-giant) {
+      @content;
+    }
+  } @else if $breakpoints == huge {
+    @media (min-width: $breakpoint-huge) {
+      @content;
+    }
+  }
+}
+
+// Clamp mixin related to min and max grid size
+// See example in helpers.scss for reference
+@mixin clamp-calc($min-vw, $max-vw, $min-value, $max-value, $property) {
+  $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+  $calc-value: unquote('#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }');
+
+  #{$property}: $min-value;
+
+  @media screen and (min-width: #{ $min-vw }) {
+    #{$property}: calc(#{$calc-value});
+  }
+
+  @media screen and (min-width: #{ $max-vw }) {
+    #{$property}: $max-value;
+  }
+}

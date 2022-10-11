@@ -1,0 +1,141 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: none;
+  padding: rem(10px) 0;
+  top: 0;
+  z-index: 1000;
+  transition: $transition;
+
+  @include breakpoint(large) {
+    padding: rem(50px) 0;
+  }
+
+  &.scroll-nav {
+    background: $light;
+
+    @include breakpoint(large) {
+      padding: rem(25px) 0;
+    }
+
+    .container {
+      .branding {
+        @include breakpoint(large) {
+          max-width: 200px;
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: $mobile-base-gap;
+    padding-right: $mobile-base-gap;
+
+    @include breakpoint(giant) {
+      padding-left: $base-gap;
+      padding-right: $base-gap;
+    }
+
+    .branding {
+      display: block;
+      max-width: 120px;
+      transition: $transition;
+
+      @include breakpoint (large) {
+        max-width: 235px;
+      }
+
+      img {
+        position: relative;
+        display: block;
+      }
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    .contacts {
+      display: flex;
+      align-items: center;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $breakpoint-medium) {
+          width: 40px;
+          height: 40px;
+          position: relative;
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 2rem;
+        }
+
+        strong {
+          font-size: $font-size;
+          margin-right: .5rem;
+
+          @media (max-width: $breakpoint-medium) {
+            display: none;
+          }
+        }
+
+        a {
+          color: $dark;
+          font-size: rem(16px);
+
+          @media (max-width: $breakpoint-medium) {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+          }
+
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        &:before {
+          font-family: $icon-font;
+          color: $light;
+          font-weight: 600;
+          background: $primary;
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: rem(16px);
+
+          @include breakpoint(medium) {
+            display: none;
+          }
+        }
+
+        &.email {
+          &:before {
+            content: '\f0e0';
+          }
+        }
+
+        &.phone {
+          &:before {
+            font-size: rem(15px);
+            content: '\f095';
+          }
+        }
+
+        &.phone {
+
+        }
+      }
+    }
+  }
+}

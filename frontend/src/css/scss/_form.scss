@@ -1,0 +1,193 @@
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include breakpoint(full) {
+    margin: rem(60px) 0;
+  }
+}
+
+.form-control {
+  border: none;
+  border-radius: 0;
+  padding: 1rem;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  margin-bottom: 20px;
+  width: 100%;
+  border-bottom: 1px solid $dark;
+  background: none;
+  transition: $transition;
+  color: $dark;
+
+  &::placeholder {
+    font-family: $main-font;
+    font-size: rem(14px);
+    color: rgba($dark, .7);
+  }
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: $primary;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.form-text {
+  opacity: .4;
+  font-weight: 100;
+}
+
+.checkContainer {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: rem(14px);
+  line-height: rem(22px);
+}
+
+.checkContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer
+}
+
+.checkContainer a {
+  color: $primary;
+
+  &:hover {
+    color: $dark;
+  }
+}
+
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 16px;
+  width: 16px;
+  border: 1px solid rgba(37, 40, 49, 0.3);
+  transition: $transition;
+  overflow: hidden;
+  border: 1px solid $dark;
+}
+
+.checkmark:before {
+  content: '\f00c';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-200%);
+  top: 0;
+  font-family: $icon-font;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkContainer:hover input ~ .checkmark {
+  background-color: rgba(37, 40, 49, 0.3)
+}
+
+.checkContainer input:checked ~ .checkmark {
+  background-color: $primary;
+  border: 1px solid $primary
+}
+
+.checkContainer input:checked ~ .checkmark:before {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%)
+}
+
+.flexBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.buttonReset {
+  opacity: .4;
+  transition: 400ms all;
+  margin-right: 20px;
+}
+
+.buttonReset:hover {
+  opacity: 1;
+}
+
+.form-container {
+  position: relative;
+}
+
+label.error {
+  background: lighten(red, 10);
+  padding: 6px 15px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 5px;
+  color: $light;
+  text-align: left;
+  transition: $transition;
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 0 0 rgba(black, 1);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid lighten($dark, 10);
+  }
+}
+
+.w-form-done, .w-form-fail {
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: left;
+  position: absolute;
+  top: calc(100% + 30px);
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 0 0 black;
+  font-size: rem(18px);
+  opacity: 0;
+  transform: translateY(100px);
+  margin-bottom: 50px;
+  visibility: hidden;
+
+  &.animate-in {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+
+}

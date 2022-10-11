@@ -1,0 +1,19 @@
+.container {
+	max-width: 85vw;
+
+	@include breakpoint(large) {
+		max-width: $max-grid-width;
+	}
+
+	.row {
+		>* {
+			padding-left: $mobile-base-gap;
+			padding-right: $mobile-base-gap;
+
+			@include breakpoint(giant) {
+				padding-left: $base-gap;
+				padding-right: $base-gap;
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+// Colors
+$light: #ffffff;
+$dark: #485550;
+$primary: #4BAA41;
+$secondary: #498241;
+
+// Font
+$main-font: "Poppins", sans-serif;
+$icon-font: "Font Awesome 6 Pro";
+$font-size: 18px;
+$headline-size: clamp(2rem, 5vw, 3rem);
+$line-height: 30px;
+$font-weight: 300;
+
+// Animation
+$transition: 400ms cubic-bezier(0.6, 0, 0, 0.5);
+
+// Breakpoints
+$breakpoint-default: 425px; //from 0px to 575px
+$breakpoint-tiny: 426px; //from 0px to 575px
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-giant: 1200px;
+$breakpoint-huge: 1400px;
+
+// Grid
+$mobile-base-gap: 24px;
+$base-gap: 32px;
+$min-grid-width: 360px;
+$max-grid-width: 1640px;
+
+// Margin
+// Minimal on lowest Viewport
+$small-m-min: 20px;
+$medium-m-min: 40px;
+$large-m-min: 60px;
+// Maximum on highest Viewport
+$small-m-max: 60px;
+$medium-m-max: 110px;
+$large-m-max: 160px;
+
+// Padding
+// Minimal on lowest Viewport
+$small-p-min: 20px;
+$medium-p-min: 40px;
+$large-p-min: 60px;
+// Maximum on highest Viewport
+$small-p-max: 60px;
+$medium-p-max: 110px;
+$large-p-max: 160px;
+
+

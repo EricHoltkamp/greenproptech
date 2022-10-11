@@ -1,0 +1,65 @@
+footer {
+  background: none;
+  @include clamp-calc($min-grid-width, $max-grid-width, $medium-p-min, $medium-p-max, padding-top);
+  @include clamp-calc($min-grid-width, $max-grid-width, $medium-p-min, $medium-p-max, padding-bottom);
+
+  >.container {
+    @include clamp-calc($min-grid-width, $max-grid-width, $medium-p-min, $medium-p-max, padding-bottom);
+  }
+
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .btn {
+      position: absolute;
+    }
+  }
+
+  .nav-footer {
+    display: flex;
+    justify-content: center;
+
+    li {
+      font-size: rem(16px);
+
+      &:not(:last-of-type) {
+        margin-right: 2rem;
+      }
+
+      a {
+        color: $dark;
+      }
+
+      &.active, &:hover {
+        a {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: $transition;
+  opacity: 0;
+  cursor: pointer;
+
+  i {
+    &:before {
+      transition: $transition;
+    }
+
+    &:hover {
+
+      &:before {
+        color: $primary;
+      }
+    }
+  }
+}

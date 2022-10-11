@@ -1,0 +1,15 @@
+// Outer Spaces
+.small-margin-top {@include clamp-calc($min-grid-width, $max-grid-width, $small-m-min, $small-m-max, margin-block-start);}
+.medium-margin-top {@include clamp-calc($min-grid-width, $max-grid-width, $medium-m-min, $medium-m-max, margin-block-start);}
+.large-margin-top {@include clamp-calc($min-grid-width, $max-grid-width, $large-m-min, $large-m-max, margin-block-start);}
+.small-margin-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $small-m-min, $small-m-max, margin-block-end);}
+.medium-margin-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $medium-m-min, $medium-m-max, margin-block-end);}
+.large-margin-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $large-m-min, $large-m-max, margin-block-end);}
+// Inner Spaces
+.small-padding-top {@include clamp-calc($min-grid-width, $max-grid-width, $small-p-min, $small-p-max, padding-block-start);}
+.medium-padding-top {@include clamp-calc($min-grid-width, $max-grid-width, $medium-p-min, $medium-p-max, padding-block-start);}
+.large-padding-top {@include clamp-calc($min-grid-width, $max-grid-width, $large-p-min, $large-p-max, padding-block-start);}
+.small-padding-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $small-p-min, $small-p-max, padding-block-end);}
+.medium-padding-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $medium-p-min, $medium-p-max, padding-block-end);}
+.large-padding-bottom {@include clamp-calc($min-grid-width, $max-grid-width, $large-p-min, $large-p-max, padding-block-end);}
+
